@@ -200,6 +200,7 @@ const onSubmit = form.handleSubmit(async (values, actions) => {
                 v-if="currentEditedCreator"
                 :creator="currentEditedCreator"
                 @update:creator="handleUpdateCreatorEvent"
+                @update:open="currentEditedCreator = null"
             />
           </CardContent>
         </div>

@@ -18,3 +18,10 @@ export type GetSettingsResponse = {
   type: Type,
   creators: Creator[]
 }
+
+export type BotModuleResponse = {
+  [key: string]: {
+    id: string;
+    enabled: boolean;
+  };
+};

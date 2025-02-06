@@ -14,10 +14,10 @@ type Creator = {
 }
 
 const props = defineProps<{
-  creator: Creator | null
+  creator: Creator
 }>()
 
-const emits = defineEmits(['update:creator'])
+const emits = defineEmits(['update:creator', 'update:open'])
 
 const {data: categories} = await useAsyncData<Response>('categories', () => $fetch(`/api/guilds/categories`));
 
@@ -37,7 +37,7 @@ function pushPlaceholder(name: string) {
 }
 
 const onSubmit = form.handleSubmit(async (values: any) => {
-  await $fetch('/api/modules/temporary_voice/creator/' + props.creator.id + '/edit', {
+  await $fetch('/api/temporary_voice/creator/' + props.creator.id + '/edit', {
     method: 'POST',
     body: values,
   })
@@ -53,7 +53,7 @@ const onSubmit = form.handleSubmit(async (values: any) => {
 </script>
 
 <template>
-  <Dialog :open="creator !== null" @update:open="emits('update:creator')">
+  <Dialog :open="creator !== null" @update:open="emits('update:open')">
     <DialogTrigger as-child>
       <slot/>
     </DialogTrigger>

@@ -6,6 +6,8 @@ const {form} = defineProps<{
   form: FormContext<any, any>
 }>()
 
+const {currentBot} = useBotsStore()
+
 const {t} = useI18n({
   useScope: 'local'
 })
@@ -49,14 +51,14 @@ function handleAction(action: any) {
   <div class="flex gap-4 bg-slate-100 dark:bg-[#36393e] p-4 rounded-lg" v-else>
     <!-- Bot Avatar -->
     <Avatar>
-      <AvatarImage :src="''"/>
+      <AvatarImage :src="currentBot.data.icon"/>
     </Avatar>
 
     <!-- Message Content -->
     <div class="flex-1">
       <!-- Message Header -->
       <div class="flex items-center gap-2 mb-1">
-        <span class="font-medium">Your bot</span>
+        <span class="font-medium">{{ currentBot.data?.name }}</span>
         <span class="px-1 bg-[#5865F2] rounded text-xs font-medium text-white">{{ t('bot_label') }}</span>
         <span class="text-[#B5BAC1] text-xs">17.09.24, 21:52</span>
       </div>
