@@ -1,7 +1,7 @@
 {
-  "name": "my-nuxt-layer",
+  "name": "@kazkovy-kit/temporary_voice",
   "type": "module",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "main": "./nuxt.config.ts",
   "scripts": {
     "dev": "nuxi dev .playground",
@@ -20,9 +20,7 @@
   },
   "packageManager": "yarn@1.22.22+sha1.ac34549e6aa8e7ead463a7407e1c7390f61a6610",
   "dependencies": {
-    "@kazkovy-kit/auth": "^0.1.1",
     "@kazkovy-kit/modules": "^0.2.3",
-    "@kazkovy-kit/ui": "^0.1.8",
     "@vee-validate/zod": "^4.15.0",
     "zod": "^3.24.1"
   }
