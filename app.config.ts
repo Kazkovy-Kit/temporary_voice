@@ -1,16 +1,16 @@
 export default defineAppConfig({
-    modules: [
+  modules: [
+    {
+      id: "temporary-voice",
+      icon: "lucide:mic-vocal",
+      items: [
         {
-            id: 'temporary_voice',
-            icon: 'lucide:mic-vocal',
-            items: [
-                {
-                    id: 'settings',
-                    to: {
-                        name: 'temporary_voice-settings',
-                    },
-                }
-            ]
-        }
-    ]
-})
+          id: "settings",
+          to: {
+            name: "temporary_voice-settings",
+          },
+        },
+      ],
+    },
+  ],
+});
