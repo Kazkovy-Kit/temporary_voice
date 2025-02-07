@@ -7,7 +7,7 @@ export default defineAppConfig({
         {
           id: "settings",
           to: {
-            name: "temporary_voice-settings",
+            name: "temporary-voice-settings",
           },
         },
       ],
